@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}

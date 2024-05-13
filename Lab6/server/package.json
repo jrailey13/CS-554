@@ -1,0 +1,20 @@
+{
+  "name": "cs-554-lab-6",
+  "version": "1.0.0",
+  "description": "Lab 6 for CS 554",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Jameson Railey 20020463",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.10.0",
+    "flat": "^6.0.1",
+    "graphql": "^16.8.1",
+    "mongodb": "^6.3.0",
+    "redis": "^4.6.13",
+    "regex": "^0.1.1"
+  }
+}

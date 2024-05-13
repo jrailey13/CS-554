@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "node-redis-pubsub": "^5.0.0"
+  },
+  "name": "simple-ipc",
+  "version": "1.0.0",
+  "description": "Simple IPC example",
+  "main": "receiver.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Phil",
+  "license": "MIT"
+}

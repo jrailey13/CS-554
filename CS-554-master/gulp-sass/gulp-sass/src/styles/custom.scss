@@ -1,0 +1,90 @@
+@import 'variables';
+@import './src/styles/bootstrap/scss/bootstrap';
+
+@mixin circle($color) {
+  width: 200px;
+  height: 200px;
+  background: $color;
+  border-radius: 50%;
+}
+
+@mixin border-bottom($size, $color) {
+  border-bottom: $size solid $color;
+}
+
+body,
+html {
+  background: $body-background;
+  color: darken($brand-primary, 20%);
+  font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-size: $primary-font-size;
+}
+
+p {
+  font-size: $secondary-font-size;
+}
+
+section.#{$section-content-class} {
+  @if $section-content-class == section-content {
+    h2 {
+      @include border-bottom(2px, $green);
+    }
+    p {
+      font-size: 12pt;
+      color: $patricks-green;
+    }
+  } @else {
+    h2 {
+      @include border-bottom(10px, $blue);
+    }
+    p {
+      font-size: $secondary-font-size + 32pt;
+      text-decoration: underline;
+      color: red;
+    }
+    span {
+      font-style: italic;
+      color: blue;
+    }
+  }
+}
+
+div.#{$div-circle-class} {
+  @include circle($patricks-green);
+}
+
+div.anotherDivCircle {
+  @include circle(blue);
+}
+
+.error {
+  background-color: red;
+  font-weight: bold;
+  color: white;
+}
+
+.serious-error {
+  @extend .error;
+  font-weight: bolder;
+  color: yellow;
+  border: 3px solid yellow;
+}
+
+@each $pet in dog, cat, bird {
+  @if $pet == dog {
+    .#{$pet} {
+      color: blue;
+      background-color: yellow;
+    }
+  } @else if $pet == cat {
+    .#{$pet} {
+      color: green;
+      background-color: purple;
+    }
+  } @else if $pet == bird {
+    .#{$pet} {
+      color: red;
+      background-color: orange;
+    }
+  }
+}

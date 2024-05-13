@@ -1,0 +1,26 @@
+{
+	"name": "typescript-pokemon",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"dev": "ts-node ./src/server.ts",
+		"prod": "npm run build && npm start",
+		"start": "node ./dist/server.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch": "nodemon --exec ts-node -- ./src/server.ts"
+	},
+	"author": "Patrick Hill",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/express-serve-static-core": "^4.17.33",
+		"@types/node": "^18.16.0",
+		"nodemon": "^2.0.22",
+		"ts-node": "^8.8.2",
+		"typescript": "^5.0.4"
+	},
+	"dependencies": {
+		"express": "^4.18.2"
+	}
+}

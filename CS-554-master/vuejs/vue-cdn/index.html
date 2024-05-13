@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue.JS CDN Example</title>
+</head>
+
+<body>
+	<div id='app'>
+		<select v-model="selected">
+			<option disabled value="">Choose a fruit</option>
+			<option>Apple</option>
+			<option>Banana</option>
+			<option>Blueberry</option>
+		</select>
+
+		<span>Fruit chosen: {{selected}}</span>
+
+		<ul>
+			<li v-for="show in shows">
+				{{show.name}}
+			</li>
+		</ul>
+	</div>
+
+	<script setup src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+	<script>
+		const { createApp } = Vue
+		createApp({
+			data() {
+				return {
+					selected: null,
+					shows: []
+				}
+			},
+			mounted() {
+				console.log("Mounted Fired")
+			},
+			created() {
+				console.log("created fired")
+				fetch('http://api.tvmaze.com/shows')
+					.then(response => response.json())
+					.then(json => {
+						this.shows = json
+					})
+			}
+		}).mount('#app')
+
+	</script>
+</body>
+
+</html>

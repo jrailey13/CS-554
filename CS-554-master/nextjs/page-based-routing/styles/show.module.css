@@ -1,0 +1,6 @@
+.showSummary {
+  padding-bottom: 20px;
+}
+.showSummary::first-letter {
+  font-size: 200%;
+}
